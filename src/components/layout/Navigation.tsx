@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -8,6 +7,7 @@ interface NavItem {
   href: string;
   icon: React.ReactNode;
   roles?: string[];
+  mobile?: boolean; 
 }
 
 interface NavigationProps {
@@ -18,12 +18,18 @@ interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({ items, mobile = false }) => {
   const location = useLocation();
 
+  // Filter items based on mobile prop
+  const visibleItems = items.filter(item => {
+    if (mobile && item.mobile === false) return false;
+    return true;
+  });
+
   return (
     <nav className={cn(
       "flex flex-col gap-1",
       mobile ? "mt-8" : "mt-8"
     )}>
-      {items.map((item) => (
+      {visibleItems.map((item) => (
         <Link 
           key={item.href}
           to={item.href}
