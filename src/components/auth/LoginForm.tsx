@@ -70,7 +70,7 @@ export function LoginForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 shadow-2xl p-4 rounded-md">
         {/* Email Field */}
         <FormField
           control={form.control}
@@ -137,7 +137,7 @@ export function LoginForm() {
   </Button>
   <Link
     to="/forgot-password"
-    className="text-sm text-blue-500 hover:underline ml-4"
+    className="text-sm text-blue-800 hover:underline ml-4"
   >
     Forgot password?
   </Link>
