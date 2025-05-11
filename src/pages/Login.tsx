@@ -9,8 +9,8 @@ export default function LoginPage() {
       <div className="container max-w-lg mx-auto py-8 shadow-2xl rounded-md">
         <Card className="glass-card">
           <CardHeader className="text-center space-y-1">
-            <CardTitle className="text-2xl font-bold text-blue-800">Welcome back</CardTitle>
-            <CardDescription>Log in to your AccessPro account</CardDescription>
+            <CardTitle className="text-2xl font-bold">Welcome back</CardTitle>
+            <CardDescription className="text-sm text-blue-800">Log in to your AccessPro account</CardDescription>
           </CardHeader>
           <CardContent>
             <LoginForm />
